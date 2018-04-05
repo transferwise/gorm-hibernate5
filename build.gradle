@@ -2,6 +2,8 @@ buildscript {
     repositories {
         mavenLocal()
         maven { url "https://repo.grails.org/grails/core" }
+        maven { url "http://artifacts.transferwise.com/artifactory/ext-snapshot-local" }
+		maven { url "http://artifacts.transferwise.com/artifactory/ext-release-local" }
     }
     dependencies {
         classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2"
@@ -16,7 +18,7 @@ buildscript {
 
 group "org.grails"
 //version "6.1.9.RELEASE"
-version "6.1.10.BUILD-SNAPSHOT"
+version "6.1.10-tw.BUILD-SNAPSHOT"
 println "GORM VERSION = ${project.gormVersion}"
 
 ext {
@@ -28,7 +30,6 @@ ext {
 
     nexusUsername = System.getenv("SONATYPE_USERNAME") ?: project.hasProperty("sonatypeOssUsername") ? project.sonatypeOssUsername : ''
     nexusPassword = System.getenv("SONATYPE_PASSWORD") ?: project.hasProperty("sonatypeOssPassword") ? project.sonatypeOssPassword : ''
-
 }
 
 
@@ -37,6 +38,8 @@ subprojects { project ->
     repositories {
         mavenLocal()
         maven { url "https://repo.grails.org/grails/core" }
+        maven { url "http://artifacts.transferwise.com/artifactory/ext-snapshot-local" }
+		maven { url "http://artifacts.transferwise.com/artifactory/ext-release-local" }
     }
 
     configurations.all {
@@ -192,26 +195,26 @@ subprojects { project ->
                 }
                 if(isGrails2PluginProject) {
                     if(isBuildSnapshot) {
-                        url  "https://repo.grails.org/grails/plugins-snapshots-local"
+                        url  "http://artifacts.transferwise.com/artifactory/ext-snapshot-local"
                     }
                     else {
-                        url  "https://repo.grails.org/grails/plugins-releases-local"
+                        url  "http://artifacts.transferwise.com/artifactory/ext-release-local"
                     }                    
                 }
                 else if(isGrails3PluginProject) {
                     if(isBuildSnapshot) {
-                        url  "https://repo.grails.org/grails/plugins3-snapshots-local"
+                        url  "http://artifacts.transferwise.com/artifactory/ext-snapshot-local"
                     }
                     else {
-                        url  "https://repo.grails.org/grails/plugins3-releases-local"
+                        url  "http://artifacts.transferwise.com/artifactory/ext-release-local"
                     }                    
                 }
                 else {
                     if(isBuildSnapshot) {
-                        url  "https://repo.grails.org/grails/libs-snapshots-local"
+                        url  "http://artifacts.transferwise.com/artifactory/ext-snapshot-local"
                     }
                     else {
-                        url  "https://repo.grails.org/grails/libs-releases-local"
+                        url  "http://artifacts.transferwise.com/artifactory/ext-release-local"
                     }
 
                 }
