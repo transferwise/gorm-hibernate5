@@ -195,26 +195,26 @@ subprojects { project ->
                 }
                 if(isGrails2PluginProject) {
                     if(isBuildSnapshot) {
-                        url  "http://artifacts.transferwise.com/artifactory/ext-snapshot-local"
+                        url  "http://artifacts.transferwise.com/artifactory/plugins-snapshot-local"
                     }
                     else {
-                        url  "http://artifacts.transferwise.com/artifactory/ext-release-local"
+                        url  "http://artifacts.transferwise.com/artifactory/plugins-release-local"
                     }                    
                 }
                 else if(isGrails3PluginProject) {
                     if(isBuildSnapshot) {
-                        url  "http://artifacts.transferwise.com/artifactory/ext-snapshot-local"
+                        url  "http://artifacts.transferwise.com/artifactory/plugins-snapshot-local"
                     }
                     else {
-                        url  "http://artifacts.transferwise.com/artifactory/ext-release-local"
+                        url  "http://artifacts.transferwise.com/artifactory/plugins-release-local"
                     }                    
                 }
                 else {
                     if(isBuildSnapshot) {
-                        url  "http://artifacts.transferwise.com/artifactory/ext-snapshot-local"
+                        url  "http://artifacts.transferwise.com/artifactory/plugins-snapshot-local"
                     }
                     else {
-                        url  "http://artifacts.transferwise.com/artifactory/ext-release-local"
+                        url  "http://artifacts.transferwise.com/artifactory/plugins-release-local"
                     }
 
                 }
